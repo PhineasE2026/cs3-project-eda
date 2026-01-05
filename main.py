@@ -1,8 +1,8 @@
-def main():
-    print("hello world")
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 df = pd.read_csv('healthcare-dataset-stroke-data.csv')
 df = df.head(8)
 
-if __name__ == "__main__":
-    main()
+print(df)
