@@ -43,6 +43,21 @@ plt.savefig('work_type_stroke.png')
 plt.close()
 
 # Correlation between pre-existing health conditions and having a stroke
-sns.pairplot(df)
+sns.barplot(data=df, x=hypertension | heart_disease, y=stroke)
+plt.ylabel('Stroke Rate')
+plt.xticks([0, 1], ['No Health Conditions', 'Pre-existing Health Conditions'])
+plt.xlabel('Health Conditions')
 plt.savefig('health_conditions_stroke.png')
+plt.close()
+
+# Correlation between gender and strokes
+sns.barplot(x=gender, y=stroke)
+plt.ylabel('Stroke Rate')
+plt.xlabel('Gender')
+plt.savefig('gender_stroke.png')
+plt.close()
+
+# Correlation between glucose levels and stroke rate
+sns.boxplot(x=stroke, y=avg_glucose_level)
+plt.savefig('glucose_stroke.png')
 plt.close()
