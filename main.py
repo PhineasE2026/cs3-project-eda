@@ -59,5 +59,22 @@ plt.close()
 
 # Correlation between glucose levels and stroke rate
 sns.boxplot(x=stroke, y=avg_glucose_level)
+plt.xlabel('Had Stroke')
+plt.xticks([0, 1], ['No Stroke', 'Stroke'])
+plt.ylabel('Average Glucose Levels')
 plt.savefig('glucose_stroke.png')
+plt.close()
+
+# Correlation between smoking and stroke rate
+sns.barplot(x=smoking_status, y=stroke)
+plt.ylabel('Stroke Rate')
+plt.xlabel('Smoking Status')
+plt.savefig('smoking_stroke.png')
+plt.close()
+
+# Correlation between type of area and stroke rate
+sns.barplot(x=residence_type, y=stroke)
+plt.ylabel('Stroke Rate')
+plt.xlabel('Residence Type')
+plt.savefig('residence_stroke.png')
 plt.close()
