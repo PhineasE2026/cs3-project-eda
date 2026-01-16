@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
 #definitions
 df = pd.read_csv('healthcare-dataset-stroke-data.csv')
@@ -77,4 +78,10 @@ sns.barplot(x=residence_type, y=stroke)
 plt.ylabel('Stroke Rate')
 plt.xlabel('Residence Type')
 plt.savefig('residence_stroke.png')
+plt.close()
+
+# Correlation matrix
+corr = df.corr(numeric_only=True)
+sns.heatmap(corr)
+plt.savefig('correlations_stroke.png')
 plt.close()
