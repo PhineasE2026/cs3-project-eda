@@ -80,8 +80,9 @@ plt.xlabel('Residence Type')
 plt.savefig('residence_stroke.png')
 plt.close()
 
-# Correlation matrix
+# Heatmap
 corr = df.corr(numeric_only=True)
-sns.heatmap(corr)
+mask = np.triu(np.ones_like(corr, dtype=bool))
+sns.heatmap(corr, mask=mask, annot=True, cmap='seismic', square=True)
 plt.savefig('correlations_stroke.png')
 plt.close()
